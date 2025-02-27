@@ -1,0 +1,205 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins';
+}
+
+.container {
+  width: 600px;
+  margin: 100px auto;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 20px;
+}
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.game-info > span {
+  font-size: 18px;
+  font-weight: 500;
+}
+.game-info .category span:first-child {
+  font-size: 18px;
+  font-weight: 500;
+}
+.game-info .category span:last-child {
+  color: green;
+  font-weight: bold;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.row .hangman-draw {
+  padding: 20px;
+  background-color: white;
+  width: 50%;
+  height: 280px;
+}
+.row .hangman-draw .the-draw {
+  display: none;
+  width: 60px;
+  height: 250px;
+  margin-left: 15%;
+  border-bottom: 4px solid #222;
+  position: relative;
+}
+.row .hangman-draw .the-draw .the-stand {
+  display: none;
+  position: absolute;
+  width: 4px;
+  background-color: #222;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.row .hangman-draw .the-draw .the-hang {
+  display: none;
+  background-color: #222;
+  width: 100px;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+}
+.row .hangman-draw .the-draw .the-hang:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 10%;
+  background-color: #222;
+  width: 4px;
+  height: 30px;
+}
+.row .hangman-draw .the-draw .the-rope {
+  display: none;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px dashed #222;
+  position: absolute;
+  left: calc(50% + 73px);
+  top: calc(10% + 30px);
+}
+.row .hangman-draw .the-draw .head {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #222;
+  position: absolute;
+  left: calc(50% + 78px);
+  top: calc(10% + 35px);
+}
+.row .hangman-draw .the-draw .body {
+  display: none;
+  width: 4px;
+  height: 100px;
+  background-color: #222;
+  position: absolute;
+  left: calc(50% + 96px);
+  top: calc(10% + 81px);
+}
+.row .hangman-draw .the-draw .hands {
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-bottom: 4px solid #222;
+  border-right: 4px solid #222;
+  transform: rotate(45deg);
+  position: absolute;
+  left: calc(50% + 73px);
+  top: calc(10% + 70px);
+}
+.row .hangman-draw .the-draw .legs {
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-top: 4px solid #222;
+  border-left: 4px solid #222;
+  transform: rotate(45deg);
+  position: absolute;
+  left: calc(50% + 73px);
+  top: calc(10% + 190px);
+}
+.row .letters {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.row .letters span {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  color: white;
+  background-color: #048cb9;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.row .letters span:hover,
+.row .letters .clicked {
+  background-color: #048cb980;
+}
+.row .letters .clicked {
+  pointer-events: none;
+}
+.letters-guess {
+  display: flex;
+  margin: 5px 0;
+  justify-content: center;
+  align-items: center;
+}
+.letters-guess span {
+  all: unset;
+  margin: 5px;
+  width: 35px;
+  height: 35px;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 5px;
+  border-bottom: 4px solid #222;
+  text-align: center;
+  background-color: white;
+}
+
+.true {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+.true span {
+  color: red;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  padding: 30px;
+  text-align: center;
+  background-color: #eee;
+  width: 100%;
+  font-size: 18px;
+}
+footer span span {
+  font-weight: bold;
+}
