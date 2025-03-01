@@ -26,7 +26,6 @@ body {
   font-weight: 500;
 }
 .game-info .category span:first-child {
-  font-size: 18px;
   font-weight: 500;
 }
 .game-info .category span:last-child {
@@ -202,4 +201,27 @@ footer {
 }
 footer span span {
   font-weight: bold;
+}
+
+@media (max-width: 667px) {
+  .container {
+    width: 380px;
+  }
+  .game-info {
+    text-align: center;
+  }
+  .game-info > span {
+    font-size: 15px;
+    width: 20%;
+  }
+  .game-info .category {
+    width: 40%;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .row .hangman-draw,
+  .row .letters {
+    width: 100%;
+  }
 }
